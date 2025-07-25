@@ -585,9 +585,6 @@ a:hover {
   color: #ffffff;
 }
 /* Scroll to top button*/
-.scrollToTop_wraper {
-  display: none;
-}
 .form-control {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 1.1rem;
@@ -1033,7 +1030,7 @@ a {
 .cid-sMdr6Q6VFC {
   padding-top: 10rem;
   padding-bottom: 10rem;
-  background-image: url("../../../assets/images/copilot-20250725-133630.png-1536x1024.png");
+  background-image: url("../../../assets/images/copilot-20250725-162022.png-1536x1024.png");
 }
 .cid-sMdr6Q6VFC a:hover {
   background-image: none !important;

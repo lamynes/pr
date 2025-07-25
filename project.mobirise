@@ -24,9 +24,9 @@
         "display7Size": "1.6",
         "display4Font": "Space Grotesk",
         "display4Size": 1.1,
-        "isRoundedButtons": false,
+        "isRoundedButtons": true,
         "isGhostButtonBorder": true,
-        "underlinedLinks": false,
+        "underlinedLinks": true,
         "isAnimatedOnScroll": true,
         "isScrollToTopButton": true
       },

@@ -60,7 +60,7 @@
       }
     ],
     "imageResize": true,
-    "uniqCompNum": 3,
+    "uniqCompNum": 4,
     "versionPublish": "6.0.1",
     "screenshot": "screenshot.png",
     "mcSmartCart": {
@@ -557,6 +557,106 @@
           "_styles": {
             "padding-top": "(@paddingTop * 1rem)",
             "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-media": {
+              "position": "relative",
+              "img": {
+                "max-height": "500px",
+                "width": "100%",
+                "object-fit": "cover"
+              }
+            },
+            "a": {
+              "&:hover": {
+                "background-image": "none !important"
+              }
+            },
+            ".triang-play-btn": {
+              "border-left-color": "@playColor"
+            },
+            ".circle-play-btn": {
+              "background": "@circleColor"
+            },
+            ".mbr-media span": {
+              "font-size": "4rem",
+              "transition": "all 0.2s"
+            },
+            ".modalWindow": {
+              "position": "fixed",
+              "z-index": "5000",
+              "left": "0",
+              "top": "0",
+              "background-color": "rgba(61, 61, 61, 0.65)",
+              "width": "100%",
+              "height": "100%",
+              ".modalWindow-container": {
+                "display": "table-cell",
+                "vertical-align": "middle"
+              },
+              ".modalWindow-video": {
+                "height": "calc(80vw / 1.778)",
+                "width": "80vw",
+                "margin": "0 auto"
+              }
+            },
+            ".close": {
+              "position": "fixed",
+              "opacity": "0.5",
+              "font-size": "22px",
+              "font-weight": "300",
+              "width": "60px",
+              "height": "60px",
+              "border-radius": "50%",
+              "color": "#fff",
+              "top": "2.5rem",
+              "right": "2.5rem",
+              "border": "2px solid #fff",
+              "text-shadow": "none",
+              "z-index": "5",
+              "transition": "opacity 0.3s ease",
+              "align-items": "center",
+              "justify-content": "center",
+              "display": "flex",
+              "&:hover": {
+                "opacity": "1",
+                "background": "#000",
+                "color": "#fff"
+              }
+            },
+            ".mbr-text": {
+              "text-align": "left",
+              "color": "#ffffff"
+            },
+            ".mbr-section-title": {
+              "color": "#ffffff"
+            },
+            ".colored-text": {
+              "color": "@coloredTextColor !important"
+            },
+            ".mbr-section-subtitle": {
+              "color": "#ffffff"
+            }
+          },
+          "_name": "video02",
+          "_sourceTheme": "pizzam5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"video02\" group=\"Image & Video\" plugins=\"PlayerVimeo\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" name=\"fullWidth\" title=\"Full Width\" checked>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n        <input type=\"range\" name=\"textWidth\" title=\"Video\" min=\"4\" max=\"12\" step=\"1\" value=\"12\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n        <header>Text</header>\n        <input type=\"color\" title=\"Colored\" value=\"#a68462\" name=\"coloredTextColor\">\n        <header>Video</header>\n        <input type=\"color\" title=\"Circle\" name=\"circleColor\" value=\"#414142\">\n        <input type=\"color\" title=\"Play\" name=\"playColor\" value=\"#eeeeee\">\n        <input type=\"text\" title=\"Link\" name=\"modalVideo\" value=\"https://www.youtube.com/watch?v=VA8PzkQa8d8\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input title=\"Image\" type=\"image\" value=\"../_images/image10.jpg\">\n            <input title=\"Color\" type=\"color\" value=\"#101010\" selected>\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#414142\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.4\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div class=\"px-0 px-sm-3\" mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row mx-0 mx-sm-5\">\n            <div mbr-if=\"showTitle\" class=\"col-12 mb-5 px-sm-3\">\n                <h3 class=\"mbr-section-title mbr-fonts-style\" mbr-theme-style=\"display-2\" data-app-selector=\".mbr-section-title\" data-app-placeholder=\"Type Text\">\n                    <i class=\"colored-text\">Always</i> fresh and tasty\n                </h3>\n            </div>\n            <div mbr-if=\"showText\" class=\"col-12 px-sm-3 mb-4\">\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" data-app-placeholder=\"Type Text\">\n                    Ac placerat vestibulum lectus mauris ultrices.\n                    <a class=\"watch-the-video\" href=\"#\">Watch video</a>\n                </p>\n            </div>\n        </div>\n        <div class=\"row mx-0 mx-sm-5 justify-content-center\">\n            <div class=\"col-12 col-lg-{{textWidth}} px-0 px-sm-3\">\n                <div class=\"box\">\n                    <div class=\"mbr-media show-modal align-center\" data-modal=\".modalWindow\">\n                        <img src=\"@PROJECT_PATH@/assets/images/unnamed-3.webp\" alt=\"Pelican Reef\">\n                        <a href=\"#\">\n                            <div class=\"wrap-play-btn\">\n                                <div class=\"circle-play-btn\">\n                                    <div class=\"triang-play-btn\"></div>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div>\n        <div class=\"modalWindow\" style=\"display: none\">\n            <div class=\"modalWindow-container\">\n                <div class=\"modalWindow-video-container\">\n                    <div class=\"modalWindow-video\">\n                        <iframe width=\"100%\" height=\"100%\" data-src=\"{{modalVideo}}\" frameborder=\"0\" allowfullscreen=\"1\"></iframe>\n                    </div>\n                    <a class=\"close\" role=\"button\" data-dismiss=\"modal\" data-bs-dismiss=\"modal\">\n                        <span aria-hidden=\"true\" class=\"mbr-iconfont mobi-mbri-close mobi-mbri closeModal\"></span>\n                        <span class=\"sr-only visually-hidden\">Close</span>\n                    </a>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "uRZBZAKtL2",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "video02-3"
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
             "& when (@bg-type = \"image\")": {
               "background-image": "url(@bg-value)"
             },
@@ -589,15 +689,15 @@
           },
           "_name": "list02",
           "_sourceTheme": "pizzam5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"list02\" group=\"List\" mbr-class=\"{'mbr-parallax-background':bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <header>Text</header>\n        <input type=\"color\" title=\"Colored\" value=\"#e43f3f\" name=\"coloredTextColor\">\n        <header>Column</header>\n        <input type=\"range\" title=\"Amount\" name=\"colCount\" min=\"0\" max=\"6\" value=\"6\" step=\"1\">\n        <input type=\"checkbox\" title=\"Title\" name=\"showColTitle\" condition=\"colCount > 0\">\n        <input type=\"checkbox\" title=\"Text\" name=\"showColText\" condition=\"colCount > 0\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"../_images/image5.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" checked condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#414142\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\" class=\"px-0 px-sm-3\">\n        <div mbr-if=\"showTitle\" class=\"row mx-0 mx-sm-5\">\n            <div class=\"col-12 mb-3 mb-sm-5 px-sm-3\">\n                <h3 class=\"mbr-section-title mbr-fonts-style main-title\" data-app-selector=\".mbr-section-title.main-title\" mbr-theme-style=\"display-5\" data-app-placeholder=\"Type Text\">\n                    About <font color=\"#e43f3f\"><i>PELICAN REEF</i></font></h3>\n            </div>\n        </div>\n        <div class=\"row mx-0 mx-sm-5\">\n            <div class=\"col-12 col-lg-6 px-sm-3\">\n                <div mbr-if=\"showText\" class=\"row mb-3 mb-sm-5\">\n                    <div class=\"col-12\">\n                        <p class=\"mbr-text mbr-fonts-style main-text\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text.main-text\" data-app-placeholder=\"Type Text\">At the Mouth of Fowl River…\n<br>…you’ll find The Pelican Reef. For over 25 years, we’ve been providing you with fresh seafood dishes, monthly specials, and weekend entertainment. During the Spring, Summer, and Fall, there’s a constant hustle and bustle of boats along Fowl River and we’ve always been a part of it. One of the things you’ll find here is the special interest we take in our food.\n<br>\n<br>What you can eat here\n<br>Your choices from our menu range from classic seafood dishes to our own twists on famous sandwiches, like our Reef Burger Reef BLT. You can get a range of drinks from our bar. And if you’re in the mood for a cocktail, we can make that happen too.\n<br>\n<br>And, to add to your meal, you can enjoy a killer view that makes all the difference. In our case, we have a beautiful view of Fowl River. You can watch the sunlight on the water and enjoy the slight breeze as you enjoy your meal we’ve specially prepared for you.\n<br>\n<br>Located at Fowl River Marina\n<br>Located at 11799 Dauphin Island Pkwy Theodore, AL 36582, you will find us right next to The Fowl River Marina. There’s boat lifts and boat launches there to store your boat and you can launch your boat directly into Fowl River any day of the year. And it’s close to everything.\n<br>\n<br>From Mobile, it’s a quick 20 minute drive down Rangeline. It’s just around the corner from Dog River. If you’re on Dauphin Island, we’re just down the road. You can hop in the car and drive down for a killer meal or to just come enjoy our weekend entertainment.\n<br>\n<br>What to do on nights and weekends\n<br>On nights and weekends, you can always catch live music, karaoke, DJs, or the special events we put on. During the warm weather, there’s almost always something going at The Pelican Reef on Friday and Saturday nights.</p>\n                    </div>\n                </div>\n                <div mbr-if=\"colCount > 0\" class=\"row\">\n                    <div class=\"col-12 col-sm-6 mb-2 mb-sm-4\">\n                        <h5 mbr-if=\"showColTitle\" class=\"mbr-section-title col-title mbr-fonts-style mb-1\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-section-title.col-title\" data-app-placeholder=\"Type Text\">\n                            <i> 01 </i>\n                        </h5>\n                        <p mbr-if=\"showColText\" class=\"mbr-text col-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text.col-text\" data-app-placeholder=\"Type Text\">\n                            Vulputate eu scelerisque felis imperdiet proin\n                        </p>\n                    </div>\n                    <div mbr-if=\"colCount > 1\" class=\"col-12 col-sm-6 mb-2 mb-sm-4\">\n                        <h5 mbr-if=\"showColTitle\" class=\" mbr-section-title col-title mbr-fonts-style mb-1\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-section-title.col-title\" data-app-placeholder=\"Type Text\">\n                            <i> 02 </i>\n                        </h5>\n                        <p mbr-if=\"showColText\" class=\"mbr-text col-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text.col-text\" data-app-placeholder=\"Type Text\">\n                            Porta nibh venenatis cras sed felis eget velit\n                        </p>\n                    </div>\n                    <div mbr-if=\"colCount > 2\" class=\"col-12 col-sm-6 mb-2 mb-sm-4\">\n                        <h5 mbr-if=\"showColTitle\" class=\"mbr-section-title col-title mbr-fonts-style mb-1\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-section-title.col-title\" data-app-placeholder=\"Type Text\">\n                            <i> 03 </i>\n                        </h5>\n                        <p mbr-if=\"showColText\" class=\"mbr-text col-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text.col-text\" data-app-placeholder=\"Type Text\">\n                            Ipsum consequat nisl vel pretium lectus quam id\n                        </p>\n                    </div>\n                    <div mbr-if=\"colCount > 3\" class=\"col-12 col-sm-6 mb-2 mb-sm-4\">\n                        <h5 mbr-if=\"showColTitle\" class=\"mbr-section-title col-title mbr-fonts-style mb-1\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-section-title.col-title\" data-app-placeholder=\"Type Text\">\n                            <i> 04 </i>\n                        </h5>\n                        <p mbr-if=\"showColText\" class=\"mbr-text col-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text.col-text\" data-app-placeholder=\"Type Text\">\n                            Nibh mauris cursus mattis molestie a iaculis\n                        </p>\n                    </div>\n                    <div mbr-if=\"colCount > 4\" class=\"col-12 col-sm-6 mb-2 mb-sm-4\">\n                        <h5 mbr-if=\"showColTitle\" class=\"mbr-section-title col-title mbr-fonts-style mb-1\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-section-title.col-title\" data-app-placeholder=\"Type Text\">\n                            <i> 05 </i>\n                        </h5>\n                        <p mbr-if=\"showColText\" class=\"mbr-text col-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text.col-text\" data-app-placeholder=\"Type Text\">\n                            Dolor magna eget est lorem ipsum dolor sit\n                        </p>\n                    </div>\n                    <div mbr-if=\"colCount > 5\" class=\"col-12 col-sm-6 mb-2 mb-sm-4\">\n                        <h5 mbr-if=\"showColTitle\" class=\"mbr-section-title col-title mbr-fonts-style mb-1\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-section-title.col-title\" data-app-placeholder=\"Type Text\">\n                            <i> 06 </i>\n                        </h5>\n                        <p mbr-if=\"showColText\" class=\"mbr-text col-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text.col-text\" data-app-placeholder=\"Type Text\">\n                            Mattis pellentesque id nibh tortor id aliquet\n                        </p>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-12 col-lg-6 px-0 px-sm-3\">\n                <img src=\"@PROJECT_PATH@/assets/images/unnamed-4.webp\" alt=\"Pelican Reef\">\n            </div>\n        </div>\n    </div>\n</section>",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"list02\" group=\"List\" mbr-class=\"{'mbr-parallax-background':bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <header>Text</header>\n        <input type=\"color\" title=\"Colored\" value=\"#e43f3f\" name=\"coloredTextColor\">\n        <header>Column</header>\n        <input type=\"range\" title=\"Amount\" name=\"colCount\" min=\"0\" max=\"6\" value=\"0\" step=\"1\">\n        <input type=\"checkbox\" title=\"Title\" name=\"showColTitle\" condition=\"colCount > 0\">\n        <input type=\"checkbox\" title=\"Text\" name=\"showColText\" condition=\"colCount > 0\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"../_images/image5.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" checked condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#414142\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\" class=\"px-0 px-sm-3\">\n        <div mbr-if=\"showTitle\" class=\"row mx-0 mx-sm-5\">\n            <div class=\"col-12 mb-3 mb-sm-5 px-sm-3\">\n                <h3 class=\"mbr-section-title mbr-fonts-style main-title\" data-app-selector=\".mbr-section-title.main-title\" mbr-theme-style=\"display-5\" data-app-placeholder=\"Type Text\">\n                    About <font color=\"#e43f3f\"><i>PELICAN REEF</i></font></h3>\n            </div>\n        </div>\n        <div class=\"row mx-0 mx-sm-5\">\n            <div class=\"col-12 col-lg-6 px-sm-3\">\n                <div mbr-if=\"showText\" class=\"row mb-3 mb-sm-5\">\n                    <div class=\"col-12\">\n                        <p class=\"mbr-text mbr-fonts-style main-text\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text.main-text\" data-app-placeholder=\"Type Text\"><i><b>At the Mouth of Fowl River…\n<br></b></i>…you’ll find The Pelican Reef. For over 25 years, we’ve been providing you with fresh seafood dishes, monthly specials, and weekend entertainment. During the Spring, Summer, and Fall, there’s a constant hustle and bustle of boats along Fowl River and we’ve always been a part of it. One of the things you’ll find here is the special interest we take in our food.\n<br>\n<br><b><i>What you can eat here\n</i></b><br>Your choices from our menu range from classic seafood dishes to our own twists on famous sandwiches, like our Reef Burger Reef BLT. You can get a range of drinks from our bar. And if you’re in the mood for a cocktail, we can make that happen too.\n<br>\n<br>And, to add to your meal, you can enjoy a killer view that makes all the difference. In our case, we have a beautiful view of Fowl River. You can watch the sunlight on the water and enjoy the slight breeze as you enjoy your meal we’ve specially prepared for you.\n<br>\n<br><b><i>Located at Fowl River Marina\n</i></b><br>Located at 11799 Dauphin Island Pkwy Theodore, AL 36582, you will find us right next to The Fowl River Marina. There’s boat lifts and boat launches there to store your boat and you can launch your boat directly into Fowl River any day of the year. And it’s close to everything.\n<br>\n<br>From Mobile, it’s a quick 20 minute drive down Rangeline. It’s just around the corner from Dog River. If you’re on Dauphin Island, we’re just down the road. You can hop in the car and drive down for a killer meal or to just come enjoy our weekend entertainment.\n<br>\n<br><b><i>What to do on nights and weekends\n</i></b><br>On nights and weekends, you can always catch live music, karaoke, DJs, or the special events we put on. During the warm weather, there’s almost always something going at The Pelican Reef on Friday and Saturday nights.</p>\n                    </div>\n                </div>\n                <div mbr-if=\"colCount > 0\" class=\"row\">\n                    <div class=\"col-12 col-sm-6 mb-2 mb-sm-4\">\n                        <h5 mbr-if=\"showColTitle\" class=\"mbr-section-title col-title mbr-fonts-style mb-1\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-section-title.col-title\" data-app-placeholder=\"Type Text\">\n                            <i> 01 </i>\n                        </h5>\n                        <p mbr-if=\"showColText\" class=\"mbr-text col-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text.col-text\" data-app-placeholder=\"Type Text\">\n                            Vulputate eu scelerisque felis imperdiet proin\n                        </p>\n                    </div>\n                    <div mbr-if=\"colCount > 1\" class=\"col-12 col-sm-6 mb-2 mb-sm-4\">\n                        <h5 mbr-if=\"showColTitle\" class=\" mbr-section-title col-title mbr-fonts-style mb-1\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-section-title.col-title\" data-app-placeholder=\"Type Text\">\n                            <i> 02 </i>\n                        </h5>\n                        <p mbr-if=\"showColText\" class=\"mbr-text col-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text.col-text\" data-app-placeholder=\"Type Text\">\n                            Porta nibh venenatis cras sed felis eget velit\n                        </p>\n                    </div>\n                    <div mbr-if=\"colCount > 2\" class=\"col-12 col-sm-6 mb-2 mb-sm-4\">\n                        <h5 mbr-if=\"showColTitle\" class=\"mbr-section-title col-title mbr-fonts-style mb-1\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-section-title.col-title\" data-app-placeholder=\"Type Text\">\n                            <i> 03 </i>\n                        </h5>\n                        <p mbr-if=\"showColText\" class=\"mbr-text col-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text.col-text\" data-app-placeholder=\"Type Text\">\n                            Ipsum consequat nisl vel pretium lectus quam id\n                        </p>\n                    </div>\n                    <div mbr-if=\"colCount > 3\" class=\"col-12 col-sm-6 mb-2 mb-sm-4\">\n                        <h5 mbr-if=\"showColTitle\" class=\"mbr-section-title col-title mbr-fonts-style mb-1\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-section-title.col-title\" data-app-placeholder=\"Type Text\">\n                            <i> 04 </i>\n                        </h5>\n                        <p mbr-if=\"showColText\" class=\"mbr-text col-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text.col-text\" data-app-placeholder=\"Type Text\">\n                            Nibh mauris cursus mattis molestie a iaculis\n                        </p>\n                    </div>\n                    <div mbr-if=\"colCount > 4\" class=\"col-12 col-sm-6 mb-2 mb-sm-4\">\n                        <h5 mbr-if=\"showColTitle\" class=\"mbr-section-title col-title mbr-fonts-style mb-1\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-section-title.col-title\" data-app-placeholder=\"Type Text\">\n                            <i> 05 </i>\n                        </h5>\n                        <p mbr-if=\"showColText\" class=\"mbr-text col-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text.col-text\" data-app-placeholder=\"Type Text\">\n                            Dolor magna eget est lorem ipsum dolor sit\n                        </p>\n                    </div>\n                    <div mbr-if=\"colCount > 5\" class=\"col-12 col-sm-6 mb-2 mb-sm-4\">\n                        <h5 mbr-if=\"showColTitle\" class=\"mbr-section-title col-title mbr-fonts-style mb-1\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-section-title.col-title\" data-app-placeholder=\"Type Text\">\n                            <i> 06 </i>\n                        </h5>\n                        <p mbr-if=\"showColText\" class=\"mbr-text col-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text.col-text\" data-app-placeholder=\"Type Text\">\n                            Mattis pellentesque id nibh tortor id aliquet\n                        </p>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-12 col-lg-6 px-0 px-sm-3\">\n                <img src=\"@PROJECT_PATH@/assets/images/unnamed-4.webp\" alt=\"Pelican Reef\">\n            </div>\n        </div>\n    </div>\n</section>",
           "_cid": "uRZeQmaqHl",
           "_anchor": "list02-1",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": [],
           "_protectedParams": [],
           "_global": false,
           "_once": false,
-          "_params": {},
-          "_PHPplaceholders": [],
-          "_JSplaceholders": []
+          "_params": {}
         },
         {
           "alias": false,
@@ -627,12 +727,12 @@
           "_customHTML": "<section data-bs-version=\"5.1\" class=\"image01\" group=\"Image & Video\" mbr-class=\"{'mbr-fullscreen': fullScreen,'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Height\" name=\"imgHeight\" min=\"15\" max=\"30\" step=\"1\" value=\"28\" condition=\"fullScreen == false\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@THEME_PATH@/components/_images/image4.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#161616\" selected>\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#414142\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div class=\"container-fluid p-0\">\n        <div class=\"row m-0\">\n            <img class=\"p-0 image-h\" src=\"@PROJECT_PATH@/assets/images/copilot-20250725-141755.png-1536x1024.png\" alt>\n        </div>\n    </div>\n</section>",
           "_cid": "sMdtMG4r1G",
           "_anchor": "image01-q",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": [],
           "_protectedParams": [],
           "_global": false,
           "_once": false,
-          "_params": {},
-          "_PHPplaceholders": [],
-          "_JSplaceholders": []
+          "_params": {}
         },
         {
           "alias": false,
@@ -645,7 +745,7 @@
             },
             ".mbr-text.social": {
               "text-align": "right",
-              "color": "#101010",
+              "color": "#ffffff",
               "text-shadow": "20px 20px 20px #000000"
             },
             ".mbr-section-title": {
@@ -666,12 +766,12 @@
           "_customHTML": "<section data-bs-version=\"5.1\" class=\"footer02\" group=\"Footer\" global once=\"footers\" mbr-class=\"{\n    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Number\" name=\"showNumber\" checked>\n        <input type=\"checkbox\" title=\"Social\" name=\"showSocial\" checked>\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"../_images/image5.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#232323\" selected>\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#414142\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\" class=\"px-0 px-sm-3\">\n        <div class=\"row justify-content-between mx-0 mx-sm-5\">\n            <div class=\"col-12 col-sm-6 my-3 d-flex d-sm-block justify-content-center\">\n                <p mbr-if=\"showNumber\" class=\"mbr-text m-0 mbr-fonts-style tel\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text.tel\">\n                    <a href=\"tel:(251) 973-2670\" class=\"text-primary\">(251) 973-2670</a>\n                </p>\n            </div>\n            <div class=\"col-12 col-sm-6 my-3 d-flex d-sm-block justify-content-center\">\n                <p mbr-if=\"showSocial\" class=\"mbr-text m-0 mbr-fonts-style social\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text.social\">&nbsp;<b><a href=\"https://www.facebook.com/ThePelicanReef/\" class=\"text-primary\" target=\"_blank\">FACEBOOK</a>\n                </b></p>\n            </div>\n        </div>\n    </div>\n</section>",
           "_cid": "uRZgC0XlLV",
           "_anchor": "footer02-2",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": [],
           "_protectedParams": [],
           "_global": true,
           "_once": "footers",
-          "_params": {},
-          "_PHPplaceholders": [],
-          "_JSplaceholders": []
+          "_params": {}
         }
       ]
     }

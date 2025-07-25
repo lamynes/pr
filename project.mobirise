@@ -85,11 +85,13 @@
     "index.html": {
       "settings": {
         "main": true,
-        "title": "Home",
-        "meta_descr": "",
+        "title": "Pelican Reef",
+        "meta_descr": "Nestled along the tranquil banks of Fowl River in Theodore, Alabama, Pelican Reef is your go-to waterfront escape for casual dining and coastal charm. Located at 11799 Dauphin Island Parkway, we offer scenic views, fresh seafood, and a laid-back vibe that’s perfect for families, foodies, and weekend adventurers alike.\n\nWhether you're savoring shrimp tacos on the deck, watching boats drift by with a cold cocktail in hand, or enjoying live music under the sunset sky, Pelican Reef captures the soul of Southern hospitality and the taste of the Gulf.\n\nWe pride ourselves on generous portions, friendly service, and a welcoming atmosphere — including pet-friendly outdoor seating. With weekly events, a full bar, and signature Alabama-style seafood platters, there’s always a reason to reel in good times at Pelican Reef.",
         "header_custom": "",
         "footer_custom": "",
-        "html_before": ""
+        "html_before": "",
+        "socialSharingUrl": "",
+        "meta_image": "@PROJECT_PATH@/assets/images/pr1.png-1360x1020.png"
       },
       "components": [
         {

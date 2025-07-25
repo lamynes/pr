@@ -688,6 +688,8 @@ a {
 .cid-sMdqPDdH7j {
   z-index: 1000;
   width: 100%;
+  position: relative;
+  min-height: 80px;
 }
 .cid-sMdqPDdH7j .colored-text {
   color: #af9071 !important;
@@ -773,7 +775,7 @@ a {
 }
 .cid-sMdqPDdH7j .dropdown-menu,
 .cid-sMdqPDdH7j .navbar.opened {
-  background: #101010;
+  background: #101010 !important;
 }
 .cid-sMdqPDdH7j .nav-item:focus,
 .cid-sMdqPDdH7j .nav-link:focus {
@@ -807,6 +809,7 @@ a {
   min-height: 100px;
   transition: all 0.3s;
   border-bottom: 1px solid transparent;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
   background: #101010;
 }
 .cid-sMdqPDdH7j .navbar.opened {

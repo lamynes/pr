@@ -6,11 +6,11 @@ body {
 }
 .display-1 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 10.4rem;
+  font-size: 8.6rem;
   line-height: 1.1;
 }
 .display-1 > .mbr-iconfont {
-  font-size: 13rem;
+  font-size: 10.75rem;
 }
 .display-2 {
   font-family: 'Space Grotesk', sans-serif;
@@ -51,14 +51,14 @@ body {
 /* 0.65 - min scale variable, may vary */
 @media (max-width: 992px) {
   .display-1 {
-    font-size: 8.32rem;
+    font-size: 6.88rem;
   }
 }
 @media (max-width: 768px) {
   .display-1 {
-    font-size: 7.28rem;
-    font-size: calc( 4.29rem + (10.4 - 4.29) * ((100vw - 20rem) / (48 - 20)));
-    line-height: calc( 1.1 * (4.29rem + (10.4 - 4.29) * ((100vw - 20rem) / (48 - 20))));
+    font-size: 6.02rem;
+    font-size: calc( 3.66rem + (8.6 - 3.66) * ((100vw - 20rem) / (48 - 20)));
+    line-height: calc( 1.1 * (3.66rem + (8.6 - 3.66) * ((100vw - 20rem) / (48 - 20))));
   }
   .display-2 {
     font-size: 3.04rem;
@@ -1031,7 +1031,7 @@ a {
   }
 }
 .cid-sMdr6Q6VFC {
-  background-image: url("../../../assets/images/unnamed-1.webp");
+  background-image: url("../../../assets/images/copilot-20250725-133630.png-1536x1024.png");
 }
 .cid-sMdr6Q6VFC a:hover {
   background-image: none !important;
@@ -1039,10 +1039,10 @@ a {
 .cid-sMdr6Q6VFC .mbr-section-title {
   text-indent: -0.07em;
   color: #ffffff;
-  text-align: center;
+  text-align: right;
 }
 .cid-sMdr6Q6VFC .colored-text {
-  color: #101010 !important;
+  color: #e43f3f !important;
 }
 .cid-sMdr6Q6VFC .mbr-section-subtitle {
   color: #ffffff;
@@ -1054,7 +1054,7 @@ a {
 .cid-uRZeQmaqHl {
   padding-top: 6rem;
   padding-bottom: 6rem;
-  background-color: #101010;
+  background-color: #ffffff;
 }
 .cid-uRZeQmaqHl .mbr-section-title.col-title {
   color: #a68462;
@@ -1072,25 +1072,43 @@ a {
   color: #ffffff;
 }
 .cid-uRZeQmaqHl .mbr-section-title.main-title {
-  color: #ffffff;
-  text-align: right;
+  color: #000000;
+  text-align: left;
+}
+.cid-uRZeQmaqHl .mbr-text.main-text {
+  color: #000000;
 }
 .cid-sMdts5rohq {
+  padding-top: 0rem;
+  padding-bottom: 1rem;
   background-color: #161616;
+}
+.cid-sMdts5rohq .image-h {
+  height: 23rem;
 }
 .cid-sMdts5rohq .image-h {
   max-height: 100vh;
   object-fit: cover;
 }
 .cid-sMdtB33bmp {
+  padding-top: 0rem;
+  padding-bottom: 1rem;
   background-color: #161616;
+}
+.cid-sMdtB33bmp .image-h {
+  height: 23rem;
 }
 .cid-sMdtB33bmp .image-h {
   max-height: 100vh;
   object-fit: cover;
 }
 .cid-sMdtMG4r1G {
+  padding-top: 0rem;
+  padding-bottom: 1rem;
   background-color: #161616;
+}
+.cid-sMdtMG4r1G .image-h {
+  height: 23rem;
 }
 .cid-sMdtMG4r1G .image-h {
   max-height: 100vh;

@@ -67,18 +67,19 @@
       "currency": "USD"
     },
     "chatbutton": {},
-    "usedWebp": true,
+    "usedWebp": false,
     "cssOptimize": true,
     "lazyLoad": true,
     "favicon": false,
-    "mbrsiteDomain": "cf7u52il8q",
+    "mbrsiteDomain": "rawlfnkcjc",
     "robotsSwitcher": false,
     "sitemapSwitcher": false,
     "sitemapSwitcherAuto": false,
     "siteUrl": false,
     "cookiesAlert": false,
     "gdpr": false,
-    "pwa-switcher": false
+    "pwa-switcher": false,
+    "publishChangesOnly": true
   },
   "pages": {
     "index.html": {

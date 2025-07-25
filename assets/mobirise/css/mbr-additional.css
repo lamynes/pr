@@ -1057,6 +1057,7 @@ a {
 .cid-sMdr6Q6VFC .mbr-text {
   color: #ffffff;
   text-shadow: 0 0 20px #000000;
+  text-align: right;
 }
 .cid-uRZeQmaqHl {
   padding-top: 6rem;
@@ -1088,11 +1089,11 @@ a {
 }
 .cid-sMdtMG4r1G {
   padding-top: 0rem;
-  padding-bottom: 1rem;
+  padding-bottom: 0rem;
   background-color: #161616;
 }
 .cid-sMdtMG4r1G .image-h {
-  height: 23rem;
+  height: 28rem;
 }
 .cid-sMdtMG4r1G .image-h {
   max-height: 100vh;

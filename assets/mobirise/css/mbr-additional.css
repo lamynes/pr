@@ -1031,6 +1031,8 @@ a {
   }
 }
 .cid-sMdr6Q6VFC {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
   background-image: url("../../../assets/images/copilot-20250725-133630.png-1536x1024.png");
 }
 .cid-sMdr6Q6VFC a:hover {
@@ -1046,7 +1048,7 @@ a {
 }
 .cid-sMdr6Q6VFC .mbr-section-subtitle {
   color: #ffffff;
-  text-align: left;
+  text-align: right;
 }
 .cid-sMdr6Q6VFC .mbr-text {
   color: #ffffff;
@@ -1077,30 +1079,6 @@ a {
 }
 .cid-uRZeQmaqHl .mbr-text.main-text {
   color: #000000;
-}
-.cid-sMdts5rohq {
-  padding-top: 0rem;
-  padding-bottom: 1rem;
-  background-color: #161616;
-}
-.cid-sMdts5rohq .image-h {
-  height: 23rem;
-}
-.cid-sMdts5rohq .image-h {
-  max-height: 100vh;
-  object-fit: cover;
-}
-.cid-sMdtB33bmp {
-  padding-top: 0rem;
-  padding-bottom: 1rem;
-  background-color: #161616;
-}
-.cid-sMdtB33bmp .image-h {
-  height: 23rem;
-}
-.cid-sMdtB33bmp .image-h {
-  max-height: 100vh;
-  object-fit: cover;
 }
 .cid-sMdtMG4r1G {
   padding-top: 0rem;

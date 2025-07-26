@@ -698,6 +698,102 @@
         {
           "alias": false,
           "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            },
+            ".content-wrapper": {
+              "position": "relative",
+              "padding": "80px 60px",
+              "display": "flex",
+              "flex-direction": "column",
+              "align-items": "center",
+              "@media (max-width: 992px)": {
+                "display": "block",
+                "padding": "32px 16px"
+              },
+              "& when (@showImage)": {
+                "border": "2px solid @borderImage"
+              },
+              ".image-wrapper": {
+                "position": "absolute",
+                "top": "0",
+                "left": "0",
+                "width": "100%",
+                "height": "100%",
+                "img": {
+                  "position": "absolute",
+                  "top": "0",
+                  "left": "0",
+                  "width": "100%",
+                  "height": "100%",
+                  "object-fit": "cover",
+                  "opacity": ".5"
+                }
+              },
+              ".mbr-section-title": {
+                "position": "relative",
+                "z-index": "1",
+                "margin-bottom": "80px",
+                "@media (max-width: 992px)": {
+                  "margin-bottom": "24px"
+                }
+              },
+              ".card-wrapper": {
+                "position": "relative",
+                "z-index": "1",
+                "width": "75%",
+                "border": "3px solid @border",
+                "box-shadow": "4px 4px 0 0 @border",
+                "background-color": "@border",
+                "-webkit-flex": "inherit",
+                "@media (max-width: 992px)": {
+                  "width": "100%"
+                }
+              }
+            },
+            ".mbr-section-title": {
+              "color": "#050f0f",
+              "text-align": "center"
+            },
+            ".mbr-section-title, .mbr-section-btn": {
+              "color": "#ffffff"
+            }
+          },
+          "_name": "video01",
+          "_sourceTheme": "servicem5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"video01 servicem5\" group=\"Image & Video\" plugins=\"PlayerVimeo\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"12\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Image BG\" name=\"showImage\">\n        <input type=\"color\" title=\"Image Border Color\" value=\"#e43f3f\" name=\"borderImage\" condition=\"showImage\" selected>\n        <header>Video</header>\n        <input type=\"color\" title=\"Video Border\" value=\"050f0f\" name=\"border\" selected>\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/copilot-20250725-201943.png-1536x1024.png\" selected>\n            <input type=\"color\" title=\"Color\" value=\"#101010\">\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"@ADDONS_PATH@/servicem5/components/_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#f7fff7\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row\">\n            <div class=\"col-12\">\n                <div class=\"content-wrapper\">\n                    <h2 class=\"mbr-section-title mbr-fonts-style\" mbr-theme-style=\"display-2\" data-app-selector=\".mbr-section-title, .mbr-section-btn\" mbr-if=\"showTitle\"><b>What our customers say</b></h2>\n                    <div class=\"card-wrapper\">\n                        <div mbr-video class=\"mbr-figure\">\n                            <iframe src=\"https://www.youtube.com/watch?v=c1hL_ii505M&loop=1&autoplay=1\"></iframe>\n                        </div>\n                    </div>\n                    <div class=\"image-wrapper\" mbr-if=\"showImage\">\n                        <img src=\"@ADDONS_PATH@/servicem5/components/_images/background3.jpg\" alt=\"Mobirise\">\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "uS13CqnjCV",
+          "_anchor": "video01-9",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
             "padding-top": "(@paddingTop * 1rem)",
             "padding-bottom": "(@paddingBottom * 1rem)",
             "& when (@bg-type = 'color')": {
@@ -811,90 +907,29 @@
               "padding-top": "(@paddingTop * 1rem)",
               "padding-bottom": "(@paddingBottom * 1rem)"
             },
-            "& when (@bg-type = 'color')": {
-              "background-color": "@bg-value"
-            },
-            "& when (@bg-type = 'image')": {
+            "& when (@bg-type = \"image\")": {
               "background-image": "url(@bg-value)"
             },
-            ".mbr-fallback-image.disabled": {
-              "display": "none"
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
             },
-            ".mbr-fallback-image": {
-              "display": "block",
-              "background-size": "cover",
-              "background-position": "center center",
-              "width": "100%",
-              "height": "100%",
-              "position": "absolute",
-              "top": "0",
-              "& when (@bg-type = 'video')": {
-                "background-image": "url(@fallBackImage)"
+            "& when (@fullScreen = false)": {
+              ".image-h": {
+                "height": "(@imgHeight * 1rem)"
               }
             },
-            ".content-wrapper": {
-              "position": "relative",
-              "padding": "80px 60px",
-              "display": "flex",
-              "flex-direction": "column",
-              "align-items": "center",
-              "@media (max-width: 992px)": {
-                "display": "block",
-                "padding": "32px 16px"
-              },
-              "& when (@showImage)": {
-                "border": "2px solid @borderImage"
-              },
-              ".image-wrapper": {
-                "position": "absolute",
-                "top": "0",
-                "left": "0",
-                "width": "100%",
-                "height": "100%",
-                "img": {
-                  "position": "absolute",
-                  "top": "0",
-                  "left": "0",
-                  "width": "100%",
-                  "height": "100%",
-                  "object-fit": "cover",
-                  "opacity": ".5"
-                }
-              },
-              ".mbr-section-title": {
-                "position": "relative",
-                "z-index": "1",
-                "margin-bottom": "80px",
-                "@media (max-width: 992px)": {
-                  "margin-bottom": "24px"
-                }
-              },
-              ".card-wrapper": {
-                "position": "relative",
-                "z-index": "1",
-                "width": "75%",
-                "border": "3px solid @border",
-                "box-shadow": "4px 4px 0 0 @border",
-                "background-color": "@border",
-                "-webkit-flex": "inherit",
-                "@media (max-width: 992px)": {
-                  "width": "100%"
-                }
-              }
-            },
-            ".mbr-section-title": {
-              "color": "#050f0f",
-              "text-align": "center"
-            },
-            ".mbr-section-title, .mbr-section-btn": {
-              "color": "#ffffff"
+            ".image-h": {
+              "max-height": "100vh",
+              "object-fit": "cover"
             }
           },
-          "_name": "video01",
-          "_sourceTheme": "servicem5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"video01 servicem5\" group=\"Image & Video\" plugins=\"PlayerVimeo\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"12\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Image BG\" name=\"showImage\">\n        <input type=\"color\" title=\"Image Border Color\" value=\"#e43f3f\" name=\"borderImage\" condition=\"showImage\" selected>\n        <header>Video</header>\n        <input type=\"color\" title=\"Video Border\" value=\"050f0f\" name=\"border\" selected>\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/copilot-20250725-201943.png-1536x1024.png\" selected>\n            <input type=\"color\" title=\"Color\" value=\"#101010\">\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"@ADDONS_PATH@/servicem5/components/_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#f7fff7\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row\">\n            <div class=\"col-12\">\n                <div class=\"content-wrapper\">\n                    <h2 class=\"mbr-section-title mbr-fonts-style\" mbr-theme-style=\"display-2\" data-app-selector=\".mbr-section-title, .mbr-section-btn\" mbr-if=\"showTitle\"><b>What our customers say</b></h2>\n                    <div class=\"card-wrapper\">\n                        <div mbr-video class=\"mbr-figure\">\n                            <iframe src=\"https://www.youtube.com/watch?v=c1hL_ii505M&loop=1&autoplay=1\"></iframe>\n                        </div>\n                    </div>\n                    <div class=\"image-wrapper\" mbr-if=\"showImage\">\n                        <img src=\"@ADDONS_PATH@/servicem5/components/_images/background3.jpg\" alt=\"Mobirise\">\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_cid": "uS13CqnjCV",
-          "_anchor": "video01-9",
+          "_name": "image01",
+          "_sourceTheme": "pizzam5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"image01\" group=\"Image & Video\" mbr-class=\"{'mbr-fullscreen': fullScreen,'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Height\" name=\"imgHeight\" min=\"15\" max=\"30\" step=\"1\" value=\"30\" condition=\"fullScreen == false\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@THEME_PATH@/components/_images/image4.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#161616\" selected>\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#414142\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div class=\"container-fluid p-0\">\n        <div class=\"row m-0\">\n            <img class=\"p-0 image-h\" src=\"@PROJECT_PATH@/assets/images/copilot-20250725-163919.png-1536x1024.png\" alt=\"Pelican Reef\">\n        </div>\n    </div>\n</section>",
+          "_cid": "sMdtMG4r1G",
+          "_anchor": "image01-q",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": [],
           "_protectedParams": [],
           "_global": false,
           "_once": false,
@@ -937,41 +972,6 @@
           "_protectedParams": [],
           "_global": true,
           "_once": "footers",
-          "_params": {}
-        },
-        {
-          "alias": false,
-          "_styles": {
-            "& when not (@fullScreen)": {
-              "padding-top": "(@paddingTop * 1rem)",
-              "padding-bottom": "(@paddingBottom * 1rem)"
-            },
-            "& when (@bg-type = \"image\")": {
-              "background-image": "url(@bg-value)"
-            },
-            "& when (@bg-type = \"color\")": {
-              "background-color": "@bg-value"
-            },
-            "& when (@fullScreen = false)": {
-              ".image-h": {
-                "height": "(@imgHeight * 1rem)"
-              }
-            },
-            ".image-h": {
-              "max-height": "100vh",
-              "object-fit": "cover"
-            }
-          },
-          "_name": "image01",
-          "_sourceTheme": "pizzam5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"image01\" group=\"Image & Video\" mbr-class=\"{'mbr-fullscreen': fullScreen,'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Height\" name=\"imgHeight\" min=\"15\" max=\"30\" step=\"1\" value=\"30\" condition=\"fullScreen == false\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@THEME_PATH@/components/_images/image4.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#161616\" selected>\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#414142\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div class=\"container-fluid p-0\">\n        <div class=\"row m-0\">\n            <img class=\"p-0 image-h\" src=\"@PROJECT_PATH@/assets/images/copilot-20250725-163919.png-1536x1024.png\" alt=\"Pelican Reef\">\n        </div>\n    </div>\n</section>",
-          "_cid": "sMdtMG4r1G",
-          "_anchor": "image01-q",
-          "_PHPplaceholders": [],
-          "_JSplaceholders": [],
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
           "_params": {}
         }
       ]

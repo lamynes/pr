@@ -1277,83 +1277,13 @@ a {
 .cid-uRZO8lk6Bi .card-price {
   color: #0f0f0f;
 }
-.cid-uS121091K2 {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-  background-color: #101010;
+.cid-uS13CqnjCV {
+  background-image: url("../../../assets/images/copilot-20250725-201943.png-1536x1024.png");
 }
-.cid-uS121091K2 .mbr-media {
-  position: relative;
-}
-.cid-uS121091K2 .mbr-media img {
-  width: 101%;
-  object-fit: cover;
-}
-.cid-uS121091K2 a:hover {
-  background-image: none !important;
-}
-.cid-uS121091K2 .icon-wrap {
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-}
-.cid-uS121091K2 .card-wrapper {
-  border: 1px solid #d3312a;
-  padding: 0;
-  overflow: hidden;
-}
-.cid-uS121091K2 .mbr-media span {
-  font-size: 5rem;
-  transition: all 0.2s;
-  color: #d3312a;
-}
-.cid-uS121091K2 .modalWindow {
-  position: fixed;
-  z-index: 5000;
-  left: 0;
-  top: 0;
-  background-color: rgba(61, 61, 61, 0.65);
-  width: 100%;
-  height: 100%;
-}
-.cid-uS121091K2 .modalWindow .modalWindow-container {
-  display: table-cell;
-  vertical-align: middle;
-}
-.cid-uS121091K2 .modalWindow .modalWindow-video {
-  height: calc(44.9943757vw);
-  width: 80vw;
-  margin: 0 auto;
-}
-.cid-uS121091K2 .close {
-  position: fixed;
-  opacity: 0.5;
-  font-size: 1.5rem;
-  font-weight: 300;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  color: #fff;
-  top: 2.5rem;
-  right: 2.5rem;
-  border: 2px solid #fff;
-  text-shadow: none;
-  z-index: 5;
-  transition: opacity 0.3s ease;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-}
-.cid-uS121091K2 .close:hover {
-  opacity: 1;
-  background: #000;
-  color: #fff;
-}
-.cid-uS121091K2 .mbr-fallback-image.disabled {
+.cid-uS13CqnjCV .mbr-fallback-image.disabled {
   display: none;
 }
-.cid-uS121091K2 .mbr-fallback-image {
+.cid-uS13CqnjCV .mbr-fallback-image {
   display: block;
   background-size: cover;
   background-position: center center;
@@ -1362,20 +1292,66 @@ a {
   position: absolute;
   top: 0;
 }
-.cid-uS121091K2 .mbr-section-title {
-  color: #e43f3f;
+.cid-uS13CqnjCV .content-wrapper {
+  position: relative;
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.cid-sMdtMG4r1G {
-  padding-top: 0rem;
-  padding-bottom: 0rem;
-  background-color: #161616;
+@media (max-width: 992px) {
+  .cid-uS13CqnjCV .content-wrapper {
+    display: block;
+    padding: 32px 16px;
+  }
 }
-.cid-sMdtMG4r1G .image-h {
-  height: 30rem;
+.cid-uS13CqnjCV .content-wrapper .image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
-.cid-sMdtMG4r1G .image-h {
-  max-height: 100vh;
+.cid-uS13CqnjCV .content-wrapper .image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  opacity: .5;
+}
+.cid-uS13CqnjCV .content-wrapper .mbr-section-title {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 80px;
+}
+@media (max-width: 992px) {
+  .cid-uS13CqnjCV .content-wrapper .mbr-section-title {
+    margin-bottom: 24px;
+  }
+}
+.cid-uS13CqnjCV .content-wrapper .card-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 75%;
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0 0 #000000;
+  background-color: #000000;
+  -webkit-flex: inherit;
+}
+@media (max-width: 992px) {
+  .cid-uS13CqnjCV .content-wrapper .card-wrapper {
+    width: 100%;
+  }
+}
+.cid-uS13CqnjCV .mbr-section-title {
+  color: #050f0f;
+  text-align: center;
+}
+.cid-uS13CqnjCV .mbr-section-title,
+.cid-uS13CqnjCV .mbr-section-btn {
+  color: #ffffff;
 }
 .cid-uRZgC0XlLV {
   background-color: #101010;
@@ -1396,4 +1372,16 @@ a {
 .cid-uRZgC0XlLV .mbr-text {
   color: #ffffff;
   text-shadow: 20px 20px 20px #000000;
+}
+.cid-sMdtMG4r1G {
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  background-color: #161616;
+}
+.cid-sMdtMG4r1G .image-h {
+  height: 30rem;
+}
+.cid-sMdtMG4r1G .image-h {
+  max-height: 100vh;
+  object-fit: cover;
 }

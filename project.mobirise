@@ -62,7 +62,7 @@
       }
     ],
     "imageResize": true,
-    "uniqCompNum": 18,
+    "uniqCompNum": 19,
     "versionPublish": "6.0.1",
     "screenshot": "screenshot.png",
     "mcSmartCart": {
@@ -1733,6 +1733,128 @@
           "_anchor": "video01-g",
           "_isUserblock": true,
           "_cid": "uSgzA15CPq",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "_name": "gallery05",
+          "_sourceTheme": "startm5",
+          "_styles": {
+            ".item-wrapper": {
+              "margin-bottom": "2rem"
+            },
+            "@media (max-width: 767px)": {
+              ".smallImage": {
+                "width": "100%",
+                "& when (@autoSize)": {
+                  "height": "100%",
+                  "object-fit": "cover"
+                }
+              },
+              ".largeImage": {
+                "width": "100%",
+                ".item": {
+                  "margin-bottom": "2rem"
+                },
+                "@media (max-width: 767px)": {
+                  ".item": {
+                    "margin-bottom": "1rem"
+                  }
+                },
+                "& when (@autoSize)": {
+                  "height": "100%",
+                  "object-fit": "cover"
+                }
+              },
+              ".item-wrapper": {
+                "margin-bottom": "1rem"
+              }
+            },
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            },
+            ".mbr-description": {
+              "text-align": "left"
+            },
+            ".card-title, .iconfont-wrapper": {
+              "color": "#000000"
+            },
+            ".card-text": {
+              "color": "#000000"
+            },
+            ".mbr-section-title": {
+              "color": "#000000",
+              "text-align": "center"
+            },
+            ".mbr-number": {
+              "color": "#9fe870"
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "text-align": "center"
+            },
+            ".card-text, .item .mbr-section-btn": {
+              "text-align": "left"
+            },
+            ".smallImage": {
+              "width": "100%",
+              "& when (@autoSize)": {
+                "height": "(@imageHeight * 100px)",
+                "object-fit": "cover"
+              },
+              "@media (max-width: 992px)": {
+                "& when (@autoSize)": {
+                  "height": "100%",
+                  "object-fit": "cover"
+                }
+              }
+            },
+            ".largeImage": {
+              "width": "100%",
+              "& when (@autoSize)": {
+                "height": "((@imageHeight * 200px) + 32px)",
+                "object-fit": "cover"
+              },
+              "@media (max-width: 992px)": {
+                "& when (@autoSize)": {
+                  "height": "100%",
+                  "object-fit": "cover"
+                }
+              }
+            },
+            "& when (@reverseContent)": {
+              ".row": {
+                "flex-direction": "row-reverse"
+              }
+            }
+          },
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"gallery05\" group=\"Gallery & Slider\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Reverse\" name=\"reverseContent\" checked>\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\">\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n        <header>Image</header>\n        <input type=\"checkbox\" name=\"autoSize\" title=\"Auto Size\" checked>\n        <input type=\"range\" name=\"imageHeight\" title=\"Height\" min=\"1\" max=\"5\" step=\"1\" value=\"3\" condition=\"autoSize\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/background1-1.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#232323\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://www.youtube.com/watch?v=SB67O08AnTM\">\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"@PROJECT_PATH@/assets/images/background1-1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.2\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-center\" mbr-if=\"showTitle || showText\">\n            <div class=\"col-md-12 content-head mb-5\">\n                <h1 class=\"mbr-section-title mbr-fonts-style  mb-0\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\">\n                    <b>Gallery with fixed layout</b>\n                </h1>\n                <p class=\"mbr-text mbr-fonts-style mt-4 mb-0\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">\n                    Keep the \"Auto size\" option enabled for a better look.</p>\n            </div>\n        </div>\n        <div class=\"row justify-content-center  blockContent\">\n            <div class=\"col-12 col-lg-6\">\n                <div class=\"row\">\n                    <div class=\"col-xs-12 col-sm-12 col-md-6 col-lg-6 active\">\n                        <div class=\"item-wrapper\">\n                            <div class=\"item-img\">\n                                <img src=\"@PROJECT_PATH@/assets/images/copilot-20250728-120030.png-640x640.png\" alt title data-slide-to=\"0\" data-bs-slide-to=\"0\" class=\"smallImage\">\n                            </div>\n\n                        </div>\n                    </div>\n                    <div class=\"col-md-6 col-xs-12 col-sm-12 col-lg-6\">\n                        <div class=\"item-wrapper\">\n                            <div class=\"item-img\">\n                                <img src=\"@PROJECT_PATH@/assets/images/copilot-20250728-132710.png-872x872.png\" alt title data-slide-to=\"1\" data-bs-slide-to=\"1\" class=\"smallImage\">\n                            </div>\n\n                        </div>\n                    </div>\n                    <div class=\"col-xs-12 col-sm-12 col-md-6 col-lg-6\">\n                        <div class=\"item-wrapper\">\n                            <div class=\"item-img\">\n                                <img src=\"@PROJECT_PATH@/assets/images/copilot-20250725-130350.png-199x299.png\" alt title data-slide-to=\"2\" data-bs-slide-to=\"2\" class=\"smallImage\">\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"col-xs-12 col-sm-12 col-md-6 col-lg-6\">\n                        <div class=\"item-wrapper\">\n                            <div class=\"item-img\">\n                                <img src=\"@PROJECT_PATH@/assets/images/copilot-20250728-133646.png-872x872.png\" alt title data-slide-to=\"3\" data-bs-slide-to=\"3\" class=\"smallImage\">\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-12 col-lg-6\">\n                <div class=\"item-wrapper\">\n                    <div class=\"item-img \">\n                        <img class=\"w-100 largeImage\" src=\"@PROJECT_PATH@/assets/images/copilot-20250728-132212.png-1536x1024.png\" alt=\"Mobirise Website Builder\" data-slide-to=\"3\" data-bs-slide-to=\"3\">\n                    </div>\n\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_anchor": "gallery05-i",
+          "_isUserblock": true,
+          "_cid": "uSh2Y4WCb2",
           "_protectedParams": [],
           "_global": false,
           "_once": false,

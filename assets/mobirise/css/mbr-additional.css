@@ -1181,6 +1181,196 @@ a {
 .cid-uRZeQmaqHl .mbr-text.main-text {
   color: #000000;
 }
+.cid-uSfKZZbHrX {
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  background-color: #02050a;
+}
+.cid-uSfKZZbHrX .mbr-fallback-image.disabled {
+  display: none;
+}
+.cid-uSfKZZbHrX .mbr-fallback-image {
+  display: block;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.cid-uSfKZZbHrX .card-wrapper {
+  position: relative;
+  background-color: #14161b;
+  padding: 160px 48px;
+  margin: 6px 0;
+}
+@media (max-width: 1440px) {
+  .cid-uSfKZZbHrX .card-wrapper {
+    padding: 64px;
+  }
+}
+@media (max-width: 992px) {
+  .cid-uSfKZZbHrX .card-wrapper {
+    padding: 48px 24px;
+    margin: 3px 0;
+  }
+}
+.cid-uSfKZZbHrX .card-wrapper .title-wrapper .mbr-section-title {
+  display: inline-block;
+  width: 70%;
+  margin-bottom: 84px;
+}
+@media (max-width: 992px) {
+  .cid-uSfKZZbHrX .card-wrapper .title-wrapper .mbr-section-title {
+    width: 100%;
+    margin-bottom: 48px;
+  }
+}
+.cid-uSfKZZbHrX .embla__slide {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  min-width: 75%;
+  max-width: 75%;
+}
+.cid-uSfKZZbHrX .embla__slide:nth-child(2n) {
+  min-width: 40%;
+  max-width: 40%;
+}
+.cid-uSfKZZbHrX .embla__slide:nth-child(3n) {
+  min-width: 100%;
+  max-width: 100%;
+}
+.cid-uSfKZZbHrX .embla__slide:nth-child(4n) {
+  min-width: 40%;
+  max-width: 40%;
+}
+.cid-uSfKZZbHrX .embla__slide:nth-child(5n) {
+  min-width: 60%;
+  max-width: 60%;
+}
+.cid-uSfKZZbHrX .embla__slide:nth-child(6n) {
+  min-width: 100%;
+  max-width: 100%;
+}
+@media (max-width: 767px) {
+  .cid-uSfKZZbHrX .embla__slide {
+    min-width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+.cid-uSfKZZbHrX .embla__slide .slide-content {
+  width: 100%;
+}
+.cid-uSfKZZbHrX .embla__slide .slide-content .item-wrapper .item-img img {
+  width: 100%;
+  height: 880px;
+  object-fit: cover;
+}
+@media (max-width: 1440px) {
+  .cid-uSfKZZbHrX .embla__slide .slide-content .item-wrapper .item-img img {
+    height: 480px;
+  }
+}
+@media (max-width: 992px) {
+  .cid-uSfKZZbHrX .embla__slide .slide-content .item-wrapper .item-img img {
+    height: 300px;
+  }
+}
+.cid-uSfKZZbHrX .embla__button--next,
+.cid-uSfKZZbHrX .embla__button--prev {
+  display: flex;
+}
+.cid-uSfKZZbHrX .embla__button {
+  bottom: 45%;
+  width: 64px;
+  height: 64px;
+  font-size: 32px;
+  background-color: #e43f3f !important;
+  color: #02050a !important;
+  border: none !important;
+  border-radius: 100%;
+  transition: all 0.3s;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1 !important;
+}
+@media (max-width: 1540px) {
+  .cid-uSfKZZbHrX .embla__button {
+    bottom: 0;
+  }
+}
+.cid-uSfKZZbHrX .embla__button:hover {
+  opacity: .8 !important;
+}
+.cid-uSfKZZbHrX .embla__button:disabled {
+  opacity: .2 !important;
+}
+.cid-uSfKZZbHrX .embla__button.embla__button--prev {
+  left: 0;
+}
+@media (max-width: 1540px) {
+  .cid-uSfKZZbHrX .embla__button.embla__button--prev {
+    left: auto;
+    margin-left: -74px;
+  }
+}
+.cid-uSfKZZbHrX .embla__button.embla__button--next {
+  right: 0;
+}
+@media (max-width: 1540px) {
+  .cid-uSfKZZbHrX .embla__button.embla__button--next {
+    right: auto;
+    margin-right: -74px;
+  }
+}
+.cid-uSfKZZbHrX .embla {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-left: 120px;
+  padding-right: 120px;
+}
+@media (max-width: 1540px) {
+  .cid-uSfKZZbHrX .embla {
+    padding-bottom: 8rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media (max-width: 992px) {
+  .cid-uSfKZZbHrX .embla {
+    padding-bottom: 6rem;
+  }
+}
+.cid-uSfKZZbHrX .embla__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+.cid-uSfKZZbHrX .embla__viewport.is-draggable {
+  cursor: grab;
+}
+.cid-uSfKZZbHrX .embla__viewport.is-dragging {
+  cursor: grabbing;
+}
+.cid-uSfKZZbHrX .embla__container {
+  display: flex;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.cid-uSfKZZbHrX .item-menu-overlay {
+  opacity: 0 !important;
+}
+.cid-uSfKZZbHrX .mbr-section-title,
+.cid-uSfKZZbHrX .title-wrapper {
+  color: #f5f8ff;
+  text-align: center;
+}
 .cid-uS13CqnjCV {
   background-image: url("../../../assets/images/copilot-20250725-201943.png-1536x1024.png");
 }
